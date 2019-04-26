@@ -7,4 +7,5 @@ This software is based on existing extension for Atom editor https://github.com/
 ## Installation
 * Download and copy the extension into the `<user home>/.vscode/extensions` folder and restart Visual Studio Code.
 
-> Note: I will publish the extension to VSCode marketplace later
+## Future Plans
+* Consider publishing the extension to VSCode marketplace.
