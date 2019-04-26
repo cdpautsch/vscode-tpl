@@ -455,7 +455,7 @@
           }
         },
         "percent_line": {
-          "comment": "I got a problem here. two %% in one string - break coloring. This should use some more logic.",
+          "comment": "TODO: I got a problem here. two %% in one string - break coloring. This should use some more logic.",
           "match": "(\\%((?:[^\\%]|\\\\\\\\|\\\\%)*)\\%)",
           "name": "keyword.control.tpl",
           "captures": {
@@ -469,7 +469,7 @@
         },
         "qouted_line": {
           "match": "(?<!')(')([^']*)(('))(?!')",
-          "comment": "Still cannot match string like with empty or double quotes",
+          "comment": "TODO: Still cannot match string like with empty or double quotes",
           "captures": {
             "1": {
               "name": "keyword.control.tpl"
@@ -484,7 +484,7 @@
         },
         "qouted_line_empty": {
           "match": "(?<!')(')(('))(?!')",
-          "comment": "Still cannot match string like with empty or double quotes",
+          "comment": "TODO: Still cannot match string like with empty or double quotes",
           "captures": {
             "1": {
               "name": "punctuation.definition.string.begin.tpl"
@@ -499,7 +499,7 @@
         },
         "double_qouted_line": {
           "match": "(\\\"((?:[^\\\"]|\\\\\\\\|\\\\\")*)\\\")",
-          "comment": "Still cannot match string like with empty or single quotes",
+          "comment": "TODO: Still cannot match string like with empty or single quotes",
           "captures": {
             "1": {
               "name": "keyword.control.tpl"
@@ -511,7 +511,7 @@
         },
         "square_brackets_line_empty": {
           "match": "(?<!\\[)(\\[)((\\]))(?!\\])",
-          "comment": "Still cannot match string like with empty or double quotes",
+          "comment": "TODO: Still cannot match string like with empty or double quotes",
           "captures": {
             "1": {
               "name": "punctuation.definition.string.begin.tpl"
@@ -796,7 +796,7 @@
           ]
         },
         "discovery_functions": {
-          "comment": "Discovery functions DEV looks working",
+          "comment": "TODO: confirm that Discovery functions DEV is working",
           "begin": "(discovery)(\\.)(fileGet|fileInfo|getNames|listDirectory|listRegistry|registryKey|wmiQuery|wbemQuery|wbemEnumInstances|runCommand|snmpGet|snmpGetTable|restfulGet|restfulPost|vSphereFindObjects|vSphereTraverseToObjects|vSphereGetProperties|vSphereGetPropertyTable)",
           "beginCaptures": {
             "1": {
@@ -828,7 +828,7 @@
           ]
         },
         "model_functions": {
-          "comment": "Model functions DEV looks working",
+          "comment": "TODO: confirm that Model functions DEV is working",
           "begin": "((model)(\\.)(addDisplayAttribute|removeDisplayAttribute|addContainment|setContainment|destroy|withdraw|setRemovalGroup|anchorRemovalGroup|suppressRemovalGroup|host|hosts|findPackages|addDisplayAttribute|removeDisplayAttribute|kind))",
           "beginCaptures": {
             "1": {
@@ -863,7 +863,7 @@
           ]
         },
         "model_rel_functions": {
-          "comment": "Model rel functions DEV looks working",
+          "comment": "TODO: confirm that Model rel functions DEV is working",
           "begin": "((model)(\\.)(rel|uniquerel)(\\.)(Communication|Containment|Dependency|Detail|HostContainment|HostedFile|HostedSoftware|Management|RelatedFile|SoftwareService|SoftwareContainment|StorageUse))",
           "beginCaptures": {
             "1": {
@@ -898,7 +898,7 @@
           ]
         },
         "model_SI_functions": {
-          "comment": "Model SI functions DEV looks working. TODO: upgrage to highlight inr content 2017-08-15",
+          "comment": "TODO: confirm that Model SI functions DEV is working. TODO: upgrage to highlight inr content 2017-08-15",
           "begin": "((model)(\\.)(SoftwareInstance))",
           "beginCaptures": {
             "1": {
@@ -1338,7 +1338,7 @@
           "name": "keyword.control.conditional.tpl"
         },
         "for_statement": {
-          "comment": "Improve this with some logic. Now only works when 4 spaces before it.",
+          "comment": "TODO: Improve this with some logic. Now only works when 4 spaces before it.",
           "begin": "\\s*(for\\b)(?!;)",
           "beginCaptures": {
             "1": {
