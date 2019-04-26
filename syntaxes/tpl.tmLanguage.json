@@ -228,7 +228,7 @@
       "repository": {
         "tags": {
           "comment": "Tags",
-          "match": "tags",
+          "match": "(tags)",
           "name": "keyword.control.import.tpl"
         },
         "tags_TKU": {
@@ -237,13 +237,13 @@
           "name": "constant.other.tpl"
         },
         "metadata": {
-          "begin": "^\\s{4}(metadata)\\s+?$",
+          "begin": "^\\s*(metadata)\\s+?$",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.tpl"
             }
           },
-          "end": "^\\s{4}(end\\smetadata;)\\s+?$",
+          "end": "^\\s*(end\\smetadata;)\\s+?$",
           "endCaptures": {
             "1": {
               "name": "keyword.control.tpl"
@@ -262,7 +262,7 @@
           ]
         },
         "metadata_2": {
-          "begin": "^(metadata)\\s+?$",
+          "begin": "^\\s*(metadata)\\s+?$",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.tpl"
@@ -287,13 +287,13 @@
           ]
         },
         "overwiev": {
-          "begin": "^\\s{4}(overview)\\s+?$",
+          "begin": "^\\s*(overview)\\s+?$",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.tpl"
             }
           },
-          "end": "^\\s{4}(end\\soverview;)\\s+?$",
+          "end": "^\\s*(end\\soverview;)\\s+?$",
           "endCaptures": {
             "1": {
               "name": "keyword.control.tpl"
@@ -340,13 +340,13 @@
           ]
         },
         "triggers": {
-          "begin": "^\\s{4}(triggers)\\s+?$",
+          "begin": "^\\s*(triggers)\\s+?$",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.tpl"
             }
           },
-          "end": "^\\s{4}(end\\striggers;)\\s+?$",
+          "end": "^\\s*(end\\striggers;)\\s+?$",
           "endCaptures": {
             "1": {
               "name": "keyword.control.tpl"
@@ -371,13 +371,13 @@
           ]
         },
         "body": {
-          "begin": "^\\s{4}(body)$",
+          "begin": "^\\s*(body)$",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.tpl"
             }
           },
-          "end": "^\\s{4}(end\\sbody;)$",
+          "end": "^\\s*(end\\sbody;)$",
           "endCaptures": {
             "1": {
               "name": "keyword.control.tpl"
@@ -405,13 +405,13 @@
           ]
         },
         "removal": {
-          "begin": "^\\s{4}(removal)",
+          "begin": "^\\s*(removal)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.tpl"
             }
           },
-          "end": "^\\s{4}(end\\sremoval;)",
+          "end": "^\\s*(end\\sremoval;)",
           "endCaptures": {
             "1": {
               "name": "keyword.control.tpl"
@@ -1339,7 +1339,7 @@
         },
         "for_statement": {
           "comment": "Improve this with some logic. Now only works when 4 spaces before it.",
-          "begin": "\\s{4}(for\\b)(?!;)",
+          "begin": "\\s*(for\\b)(?!;)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.tpl"
@@ -1624,7 +1624,7 @@
         },
         "define": {
           "comment": "Adding SQL support via #lines",
-          "begin": "\\s+(define)\\s+(\\S+)\\((.*?)\\)(\\s\\S+\\s(.*))?",
+          "begin": "\\s*(define)\\s+(\\S+)\\((.*?)\\)(\\s\\S+\\s(.*))?",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.tpl"
@@ -1639,7 +1639,7 @@
               "name": "constant.numeric.tpl"
             }
           },
-          "end": "\\s+(end\\sdefine;\\s+?$)",
+          "end": "\\s*(end\\sdefine;\\s+?$)",
           "endCaptures": {
             "1": {
               "name": "keyword.control.tpl"
@@ -1668,7 +1668,7 @@
         },
         "alt_define": {
           "comment": "Adding SQL support via #lines",
-          "begin": "\\s+(define)\\s+(\\S+)(\\s\\S+\\s(.*))?",
+          "begin": "\\s*(define)\\s+(\\S+)(\\s\\S+\\s(.*))?",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.tpl"
@@ -1680,7 +1680,7 @@
               "name": "variable.parameter.tpl"
             }
           },
-          "end": "\\s+(end\\sdefine;)",
+          "end": "\\s*(end\\sdefine;)",
           "endCaptures": {
             "1": {
               "name": "keyword.control.tpl"
