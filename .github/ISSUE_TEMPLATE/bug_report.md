@@ -16,19 +16,13 @@ assignees: ''
 <!--- Tell us what happens instead of the expected behavior -->
 
 ## Steps to Reproduce
-<!--- Provide a link to a live example, or an unambiguous set of steps to -->
-<!--- reproduce this bug. Include code to reproduce, if relevant -->
-1.
-1.
-1.
-1.
+<!--- Provide steps to reproduce, or examples of TPL code which demonstrate your issue -->
+<!--- Include a relevant screenshot if desired -->
 
 ## Environment
- - OS: [e.g. iOS]
- - VSCode Version: [e.g. 1.33]
- - TPL Version: [e.g. 1.15]
+ - OS: 
+ - VSCode Version: 
+ - TPL Version: 
 
-<!--- Provide a general summary of the issue in the Title above -->
-
-## Other Information
-<!--- Provide more information, suggest a fix, or anything else you want to include.
+## Other Information (optional)
+<!--- Provide more information, suggest a fix, or anything else you want to include. -->
