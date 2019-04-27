@@ -228,7 +228,7 @@
       "repository": {
         "tags": {
           "comment": "Tags",
-          "match": "tags",
+          "match": "(tags)",
           "name": "keyword.control.import.tpl"
         },
         "tags_TKU": {
@@ -237,13 +237,13 @@
           "name": "constant.other.tpl"
         },
         "metadata": {
-          "begin": "^\\s{4}(metadata)\\s+?$",
+          "begin": "^\\s*(metadata)\\s+?$",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.tpl"
             }
           },
-          "end": "^\\s{4}(end\\smetadata;)\\s+?$",
+          "end": "^\\s*(end\\smetadata;)\\s+?$",
           "endCaptures": {
             "1": {
               "name": "keyword.control.tpl"
@@ -262,7 +262,7 @@
           ]
         },
         "metadata_2": {
-          "begin": "^(metadata)\\s+?$",
+          "begin": "^\\s*(metadata)\\s+?$",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.tpl"
@@ -287,13 +287,13 @@
           ]
         },
         "overwiev": {
-          "begin": "^\\s{4}(overview)\\s+?$",
+          "begin": "^\\s*(overview)\\s+?$",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.tpl"
             }
           },
-          "end": "^\\s{4}(end\\soverview;)\\s+?$",
+          "end": "^\\s*(end\\soverview;)\\s+?$",
           "endCaptures": {
             "1": {
               "name": "keyword.control.tpl"
@@ -340,13 +340,13 @@
           ]
         },
         "triggers": {
-          "begin": "^\\s{4}(triggers)\\s+?$",
+          "begin": "^\\s*(triggers)\\s+?$",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.tpl"
             }
           },
-          "end": "^\\s{4}(end\\striggers;)\\s+?$",
+          "end": "^\\s*(end\\striggers;)\\s+?$",
           "endCaptures": {
             "1": {
               "name": "keyword.control.tpl"
@@ -371,13 +371,13 @@
           ]
         },
         "body": {
-          "begin": "^\\s{4}(body)$",
+          "begin": "^\\s*(body)$",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.tpl"
             }
           },
-          "end": "^\\s{4}(end\\sbody;)$",
+          "end": "^\\s*(end\\sbody;)$",
           "endCaptures": {
             "1": {
               "name": "keyword.control.tpl"
@@ -405,13 +405,13 @@
           ]
         },
         "removal": {
-          "begin": "^\\s{4}(removal)",
+          "begin": "^\\s*(removal)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.tpl"
             }
           },
-          "end": "^\\s{4}(end\\sremoval;)",
+          "end": "^\\s*(end\\sremoval;)",
           "endCaptures": {
             "1": {
               "name": "keyword.control.tpl"
@@ -455,7 +455,7 @@
           }
         },
         "percent_line": {
-          "comment": "I got a problem here. two %% in one string - break coloring. This should use some more logic.",
+          "comment": "TODO: I got a problem here. two %% in one string - break coloring. This should use some more logic.",
           "match": "(\\%((?:[^\\%]|\\\\\\\\|\\\\%)*)\\%)",
           "name": "keyword.control.tpl",
           "captures": {
@@ -469,7 +469,7 @@
         },
         "qouted_line": {
           "match": "(?<!')(')([^']*)(('))(?!')",
-          "comment": "Still cannot match string like with empty or double quotes",
+          "comment": "TODO: Still cannot match string like with empty or double quotes",
           "captures": {
             "1": {
               "name": "keyword.control.tpl"
@@ -484,7 +484,7 @@
         },
         "qouted_line_empty": {
           "match": "(?<!')(')(('))(?!')",
-          "comment": "Still cannot match string like with empty or double quotes",
+          "comment": "TODO: Still cannot match string like with empty or double quotes",
           "captures": {
             "1": {
               "name": "punctuation.definition.string.begin.tpl"
@@ -499,7 +499,7 @@
         },
         "double_qouted_line": {
           "match": "(\\\"((?:[^\\\"]|\\\\\\\\|\\\\\")*)\\\")",
-          "comment": "Still cannot match string like with empty or single quotes",
+          "comment": "TODO: Still cannot match string like with empty or single quotes",
           "captures": {
             "1": {
               "name": "keyword.control.tpl"
@@ -511,7 +511,7 @@
         },
         "square_brackets_line_empty": {
           "match": "(?<!\\[)(\\[)((\\]))(?!\\])",
-          "comment": "Still cannot match string like with empty or double quotes",
+          "comment": "TODO: Still cannot match string like with empty or double quotes",
           "captures": {
             "1": {
               "name": "punctuation.definition.string.begin.tpl"
@@ -796,7 +796,7 @@
           ]
         },
         "discovery_functions": {
-          "comment": "Discovery functions DEV looks working",
+          "comment": "TODO: confirm that Discovery functions DEV is working",
           "begin": "(discovery)(\\.)(fileGet|fileInfo|getNames|listDirectory|listRegistry|registryKey|wmiQuery|wbemQuery|wbemEnumInstances|runCommand|snmpGet|snmpGetTable|restfulGet|restfulPost|vSphereFindObjects|vSphereTraverseToObjects|vSphereGetProperties|vSphereGetPropertyTable)",
           "beginCaptures": {
             "1": {
@@ -828,7 +828,7 @@
           ]
         },
         "model_functions": {
-          "comment": "Model functions DEV looks working",
+          "comment": "TODO: confirm that Model functions DEV is working",
           "begin": "((model)(\\.)(addDisplayAttribute|removeDisplayAttribute|addContainment|setContainment|destroy|withdraw|setRemovalGroup|anchorRemovalGroup|suppressRemovalGroup|host|hosts|findPackages|addDisplayAttribute|removeDisplayAttribute|kind))",
           "beginCaptures": {
             "1": {
@@ -863,7 +863,7 @@
           ]
         },
         "model_rel_functions": {
-          "comment": "Model rel functions DEV looks working",
+          "comment": "TODO: confirm that Model rel functions DEV is working",
           "begin": "((model)(\\.)(rel|uniquerel)(\\.)(Communication|Containment|Dependency|Detail|HostContainment|HostedFile|HostedSoftware|Management|RelatedFile|SoftwareService|SoftwareContainment|StorageUse))",
           "beginCaptures": {
             "1": {
@@ -898,7 +898,7 @@
           ]
         },
         "model_SI_functions": {
-          "comment": "Model SI functions DEV looks working. TODO: upgrage to highlight inr content 2017-08-15",
+          "comment": "TODO: confirm that Model SI functions DEV is working. TODO: upgrage to highlight inr content 2017-08-15",
           "begin": "((model)(\\.)(SoftwareInstance))",
           "beginCaptures": {
             "1": {
@@ -1338,8 +1338,8 @@
           "name": "keyword.control.conditional.tpl"
         },
         "for_statement": {
-          "comment": "Improve this with some logic. Now only works when 4 spaces before it.",
-          "begin": "\\s{4}(for\\b)(?!;)",
+          "comment": "TODO: Improve this with some logic. Now only works when 4 spaces before it.",
+          "begin": "\\s*(for\\b)(?!;)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.tpl"
@@ -1624,7 +1624,7 @@
         },
         "define": {
           "comment": "Adding SQL support via #lines",
-          "begin": "\\s+(define)\\s+(\\S+)\\((.*?)\\)(\\s\\S+\\s(.*))?",
+          "begin": "\\s*(define)\\s+(\\S+)\\((.*?)\\)(\\s\\S+\\s(.*))?",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.tpl"
@@ -1639,7 +1639,7 @@
               "name": "constant.numeric.tpl"
             }
           },
-          "end": "\\s+(end\\sdefine;\\s+?$)",
+          "end": "\\s*(end\\sdefine;\\s+?$)",
           "endCaptures": {
             "1": {
               "name": "keyword.control.tpl"
@@ -1668,7 +1668,7 @@
         },
         "alt_define": {
           "comment": "Adding SQL support via #lines",
-          "begin": "\\s+(define)\\s+(\\S+)(\\s\\S+\\s(.*))?",
+          "begin": "\\s*(define)\\s+(\\S+)(\\s\\S+\\s(.*))?",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.tpl"
@@ -1680,7 +1680,7 @@
               "name": "variable.parameter.tpl"
             }
           },
-          "end": "\\s+(end\\sdefine;)",
+          "end": "\\s*(end\\sdefine;)",
           "endCaptures": {
             "1": {
               "name": "keyword.control.tpl"
