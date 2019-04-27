@@ -17,8 +17,8 @@ Download VS Code here: https://code.visualstudio.com/
 
 ## Installation
 * Clone the Git repo to your computer:
-** Using SSH: `git clone git@github.com:cdpautsch/vscode-tpl.git`. _Note: This method requires you to setup an [SSH key](https://help.github.com/en/articles/connecting-to-github-with-ssh)_.
-** Using HTTPS: `git clone https://github.com/cdpautsch/vscode-tpl.git`
+    * Using SSH: `git clone git@github.com:cdpautsch/vscode-tpl.git`. _Note: This method requires you to setup an [SSH key](https://help.github.com/en/articles/connecting-to-github-with-ssh)_.
+    * Using HTTPS: `git clone https://github.com/cdpautsch/vscode-tpl.git`
 * Download and copy the extension (the entire folder) into the `<user home>/.vscode/extensions` folder and restart Visual Studio Code.
 
 _Note: Once the language is more polished, we will eventually publish it to the VSCode extension marketplace, allowing you to enable the extension entirely from within VSCode._
