@@ -15,14 +15,9 @@ assignees: ''
 ## Current Behavior
 <!--- Tell us what happens instead of the expected behavior -->
 
-## Steps to Reproduce
+## Steps to Reproduce or Example
 <!--- Provide steps to reproduce, or examples of TPL code which demonstrate your issue -->
 <!--- Include a relevant screenshot if desired -->
 
-## Environment
- - OS: 
- - VSCode Version: 
- - TPL Version: 
-
 ## Other Information (optional)
-<!--- Provide more information, suggest a fix, or anything else you want to include. -->
+<!--- Provide more information (environment, TPL version, etc.), suggest a fix, or anything else you want to include. -->
