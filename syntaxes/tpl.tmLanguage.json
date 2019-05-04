@@ -829,19 +829,16 @@
         },
         "model_functions": {
           "comment": "TODO: confirm that Model functions DEV is working",
-          "begin": "((model)(\\.)(addDisplayAttribute|removeDisplayAttribute|addContainment|setContainment|destroy|withdraw|setRemovalGroup|anchorRemovalGroup|suppressRemovalGroup|host|hosts|findPackages|addDisplayAttribute|removeDisplayAttribute|kind))",
+          "begin": "(model)(\\.)(addDisplayAttribute|removeDisplayAttribute|addContainment|setContainment|destroy|withdraw|setRemovalGroup|anchorRemovalGroup|suppressRemovalGroup|host|hosts|findPackages|addDisplayAttribute|removeDisplayAttribute|kind)",
           "beginCaptures": {
             "1": {
               "name": "entity.name.function.tpl"
             },
             "2": {
-              "name": "support.function.tpl"
-            },
-            "3": {
               "name": "punctuation.accessor.tpl"
             },
-            "4": {
-              "name": "support.constant.tpl"
+            "3": {
+              "name": "constant.character.escape.tpl"
             }
           },
           "end": "\\;",
@@ -864,19 +861,22 @@
         },
         "model_rel_functions": {
           "comment": "TODO: confirm that Model rel functions DEV is working",
-          "begin": "((model)(\\.)(rel|uniquerel)(\\.)(Communication|Containment|Dependency|Detail|HostContainment|HostedFile|HostedSoftware|Management|RelatedFile|SoftwareService|SoftwareContainment|StorageUse))",
+          "begin": "(model)(\\.)(rel|uniquerel)(\\.)(Communication|Containment|Dependency|Detail|FunctionalContainment|HostContainment|HostedFile|HostedSoftware|Management|RelatedFile|SoftwareService|SoftwareContainment|StorageUse)",
           "beginCaptures": {
             "1": {
               "name": "entity.name.function.tpl"
             },
             "2": {
-              "name": "support.function.tpl"
-            },
-            "3": {
               "name": "punctuation.accessor.tpl"
             },
+            "3": {
+              "name": "support.function.tpl"
+            },
             "4": {
-              "name": "support.constant.tpl"
+              "name": "punctuation.accessor.tpl"
+            },
+            "5": {
+              "name": "constant.character.escape.tpl"
             }
           },
           "end": "\\;",
@@ -897,21 +897,18 @@
             }
           ]
         },
-        "model_SI_functions": {
-          "comment": "TODO: confirm that Model SI functions DEV is working. TODO: upgrage to highlight inr content 2017-08-15",
-          "begin": "((model)(\\.)(SoftwareInstance))",
+        "model_node_functions": {
+          "comment": "TODO: confirm that Model SI functions DEV is working. TODO: upgrage to highlight inr content 2017-08-15, update 5-4-2019: changing to include various node types",
+          "begin": "(model)(\\.)(BusinessApplicationInstance|Detail|FunctionalComponent|SoftwareInstance)",
           "beginCaptures": {
             "1": {
               "name": "entity.name.function.tpl"
             },
             "2": {
-              "name": "support.function.tpl"
-            },
-            "3": {
               "name": "punctuation.accessor.tpl"
             },
-            "4": {
-              "name": "support.constant.tpl"
+            "3": {
+              "name": "constant.character.escape.tpl"
             }
           },
           "end": "\\;",
@@ -1028,13 +1025,13 @@
           "match": "(related)(\\.)(detailContainer|host\\b|hostingNode)",
           "captures": {
             "1": {
-              "name": "support.function.tpl"
+              "name": "entity.name.function.tpl"
             },
             "2": {
               "name": "punctuation.accessor.tpl"
             },
             "3": {
-              "name": "support.constant.tpl"
+              "name": "constant.character.escape.tpl"
             }
           }
         },
@@ -1201,7 +1198,7 @@
               "include": "#model_functions"
             },
             {
-              "include": "#model_SI_functions"
+              "include": "#model_node_functions"
             },
             {
               "include": "#model_rel_functions"
