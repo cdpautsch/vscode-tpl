@@ -941,13 +941,13 @@
           "match": "(text)(\\.)(lower|upper|toNumber|replace|join|split|strip|leftStrip|rightStrip|hash|ordinal)",
           "captures": {
             "1": {
-              "name": "support.function.tpl"
+              "name": "keyword.control.tpl"
             },
             "2": {
               "name": "punctuation.accessor.tpl"
             },
             "3": {
-              "name": "support.constant.tpl"
+              "name": "variable.parameter.tpl"
             }
           }
         },
@@ -989,7 +989,7 @@
               "name": "punctuation.accessor.tpl"
             },
             "3": {
-              "name": "support.constant.tpl"
+              "name": "constant.character.escape.tpl"
             }
           }
         },
@@ -997,13 +997,13 @@
           "match": "(binary)(\\.)(toHexString|toIPv4|toIPv4z|toIPv6|toIPv6z|toMACAddress|toValue|toWWN)",
           "captures": {
             "1": {
-              "name": "support.function.tpl"
+              "name": "keyword.control.tpl"
             },
             "2": {
               "name": "punctuation.accessor.tpl"
             },
             "3": {
-              "name": "support.constant.tpl"
+              "name": "variable.parameter.tpl"
             }
           }
         },
