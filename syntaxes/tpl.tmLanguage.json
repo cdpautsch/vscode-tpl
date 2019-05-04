@@ -1271,6 +1271,25 @@
             }
           ]
         },
+        "node_relationships": {
+          "comment": "Covers node relationships, does not check for proper relationship names",
+          "match": "(?i)([a-z]*):([a-z]*):([a-z]*):([a-z]*)",
+          "name": "keyword.control.conditional.tpl",
+          "captures": {
+            "1": {
+              "name": "variable.parameter.tpl"
+            },
+            "2": {
+              "name": "variable.parameter.tpl"
+            },
+            "3": {
+              "name": "variable.parameter.tpl"
+            },
+            "4": {
+              "name": "variable.parameter.tpl"
+            }
+          }
+        },
         "if_statement": {
           "comment": "Match if ..values.. then and include usual lines. #lines can override some marks",
           "begin": "(?!end if;|then)(\\bif)",
@@ -1464,6 +1483,9 @@
             },
             {
               "include": "#all_keys"
+            },
+            {
+              "include": "#node_relationships"
             }
           ]
         },
