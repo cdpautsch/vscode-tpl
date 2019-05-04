@@ -800,13 +800,13 @@
           "begin": "(discovery)(\\.)(fileGet|fileInfo|getNames|listDirectory|listRegistry|registryKey|wmiQuery|wbemQuery|wbemEnumInstances|runCommand|snmpGet|snmpGetTable|restfulGet|restfulPost|vSphereFindObjects|vSphereTraverseToObjects|vSphereGetProperties|vSphereGetPropertyTable)",
           "beginCaptures": {
             "1": {
-              "name": "storage.type.tpl"
+              "name": "support.function.tpl"
             },
             "2": {
               "name": "punctuation.accessor.tpl"
             },
             "3": {
-              "name": "support.constant.tpl"
+              "name": "variable.parameter.tpl"
             }
           },
           "end": "\\;",
@@ -989,7 +989,7 @@
               "name": "punctuation.accessor.tpl"
             },
             "3": {
-              "name": "constant.character.escape.tpl"
+              "name": "variable.parameter.tpl"
             }
           }
         },
@@ -1025,13 +1025,13 @@
           "match": "(related)(\\.)(detailContainer|host\\b|hostingNode)",
           "captures": {
             "1": {
-              "name": "entity.name.function.tpl"
+              "name": "support.function.tpl"
             },
             "2": {
               "name": "punctuation.accessor.tpl"
             },
             "3": {
-              "name": "constant.character.escape.tpl"
+              "name": "variable.parameter.tpl"
             }
           }
         },
@@ -1073,7 +1073,7 @@
               "name": "punctuation.accessor.tpl"
             },
             "3": {
-              "name": "support.constant.tpl"
+              "name": "variable.parameter.tpl"
             }
           }
         },
