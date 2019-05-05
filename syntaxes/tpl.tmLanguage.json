@@ -800,13 +800,13 @@
           "begin": "(discovery)(\\.)(fileGet|fileInfo|getNames|listDirectory|listRegistry|registryKey|wmiQuery|wbemQuery|wbemEnumInstances|runCommand|snmpGet|snmpGetTable|restfulGet|restfulPost|vSphereFindObjects|vSphereTraverseToObjects|vSphereGetProperties|vSphereGetPropertyTable)",
           "beginCaptures": {
             "1": {
-              "name": "storage.type.tpl"
+              "name": "support.function.tpl"
             },
             "2": {
               "name": "punctuation.accessor.tpl"
             },
             "3": {
-              "name": "support.constant.tpl"
+              "name": "variable.parameter.tpl"
             }
           },
           "end": "\\;",
@@ -829,7 +829,7 @@
         },
         "model_functions": {
           "comment": "TODO: confirm that Model functions DEV is working",
-          "begin": "(model)(\\.)(addDisplayAttribute|removeDisplayAttribute|addContainment|setContainment|destroy|withdraw|setRemovalGroup|anchorRemovalGroup|suppressRemovalGroup|host|hosts|findPackages|addDisplayAttribute|removeDisplayAttribute|kind)",
+          "begin": "(model)(\\.)(addContainment|setContainment|destroy|withdraw|setRemovalGroup|anchorRemovalGroup|suppressRemovalGroup|host|hosts|findPackages|addDisplayAttribute|removeDisplayAttribute|kind)",
           "beginCaptures": {
             "1": {
               "name": "entity.name.function.tpl"
@@ -898,7 +898,7 @@
           ]
         },
         "model_node_functions": {
-          "comment": "TODO: confirm that Model SI functions DEV is working. TODO: upgrage to highlight inr content 2017-08-15, update 5-4-2019: changing to include various node types",
+          "comment": "TODO: confirm that Model SI functions DEV is working. TODO: add more node types",
           "begin": "(model)(\\.)(BusinessApplicationInstance|Detail|FunctionalComponent|SoftwareInstance)",
           "beginCaptures": {
             "1": {
@@ -930,24 +930,61 @@
           ]
         },
         "log_functions": {
-          "match": "(log\\.(?:debug|info|warn|error|critical))",
+          "match": "(log)(\\.)(debug|info|warn|error|critical)",
           "captures": {
             "1": {
-              "name": "storage.type.tpl"
-            }
-          }
-        },
-        "number_functions": {
-          "match": "(text)(\\.)(lower|upper|toNumber|replace|join|split|strip|leftStrip|rightStrip|hash|ordinal)",
-          "captures": {
-            "1": {
-              "name": "support.function.tpl"
+              "name": "keyword.control.tpl"
             },
             "2": {
               "name": "punctuation.accessor.tpl"
             },
             "3": {
-              "name": "support.constant.tpl"
+              "name": "storage.type.tpl"
+            }
+          }
+        },
+        "text_functions": {
+          "match": "(text)(\\.)(lower|upper|toNumber|replace|join|split|strip|leftStrip|rightStrip|hash|ordinal)",
+          "captures": {
+            "1": {
+              "name": "keyword.control.tpl"
+            },
+            "2": {
+              "name": "punctuation.accessor.tpl"
+            },
+            "3": {
+              "name": "variable.parameter.tpl"
+            }
+          }
+        },
+        "number_functions": {
+          "match": "(number)(\\.)(toChar|toText|range)",
+          "captures": {
+            "1": {
+              "name": "keyword.control.tpl"
+            },
+            "2": {
+              "name": "punctuation.accessor.tpl"
+            },
+            "3": {
+              "name": "variable.parameter.tpl"
+            }
+          }
+        },
+        "table_functions": {
+          "match": "(table\\b)(\\s*\\(|(\\.)(remove))",
+          "captures": {
+            "1": {
+              "name": "keyword.control.tpl"
+            },
+            "2": {
+              "name": "punctuation.accessor.tpl"
+            },
+            "3": {
+              "name": "punctuation.accessor.tpl"
+            },
+            "4": {
+              "name": "variable.parameter.tpl"
             }
           }
         },
@@ -980,7 +1017,7 @@
           }
         },
         "discovery_manipulation_functions": {
-          "match": "(discovery)(\\.)(process|children|descendents|parent|allProcesses|access)",
+          "match": "(discovery)(\\.)(process|children|descendents|parent|allProcesses|access|startTime)",
           "captures": {
             "1": {
               "name": "support.function.tpl"
@@ -989,7 +1026,7 @@
               "name": "punctuation.accessor.tpl"
             },
             "3": {
-              "name": "support.constant.tpl"
+              "name": "variable.parameter.tpl"
             }
           }
         },
@@ -997,13 +1034,13 @@
           "match": "(binary)(\\.)(toHexString|toIPv4|toIPv4z|toIPv6|toIPv6z|toMACAddress|toValue|toWWN)",
           "captures": {
             "1": {
-              "name": "support.function.tpl"
+              "name": "keyword.control.tpl"
             },
             "2": {
               "name": "punctuation.accessor.tpl"
             },
             "3": {
-              "name": "support.constant.tpl"
+              "name": "variable.parameter.tpl"
             }
           }
         },
@@ -1025,13 +1062,13 @@
           "match": "(related)(\\.)(detailContainer|host\\b|hostingNode)",
           "captures": {
             "1": {
-              "name": "entity.name.function.tpl"
+              "name": "support.function.tpl"
             },
             "2": {
               "name": "punctuation.accessor.tpl"
             },
             "3": {
-              "name": "constant.character.escape.tpl"
+              "name": "variable.parameter.tpl"
             }
           }
         },
@@ -1050,7 +1087,7 @@
           }
         },
         "time_functions": {
-          "match": "(time)(\\.)(current|delta|parseLocal|parseUTC|formatLocal|formatUTC|toTicks|fromTicks)",
+          "match": "(time)(\\.)(current|delta\\b|parseLocal|parseUTC|formatLocal|formatUTC|toTicks|fromTicks|deltaFromTicks)",
           "captures": {
             "1": {
               "name": "keyword.control.tpl"
@@ -1073,7 +1110,7 @@
               "name": "punctuation.accessor.tpl"
             },
             "3": {
-              "name": "support.constant.tpl"
+              "name": "variable.parameter.tpl"
             }
           }
         },
@@ -1207,13 +1244,13 @@
               "include": "#log_functions"
             },
             {
-              "include": "#log_functions"
-            },
-            {
               "include": "#text_functions"
             },
             {
               "include": "#number_functions"
+            },
+            {
+              "include": "#table_functions"
             },
             {
               "include": "#regex_functions"
