@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.4 - 2019-05-04
+### Updated
+- Work on issue #5: Function highlighting. Added missing function keywords, refined function color organization, number functions, table functions.
+
 ## 0.0.3 - 2019-05-04
 ### Updated
 - Closed issue #4: Node relationship highlighting. Node relationships will now highlight.
