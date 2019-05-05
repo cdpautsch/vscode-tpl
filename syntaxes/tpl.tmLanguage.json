@@ -930,7 +930,7 @@
           ]
         },
         "log_functions": {
-          "match": "(log)(\\.)(?:debug|info|warn|error|critical)",
+          "match": "(log)(\\.)(debug|info|warn|error|critical)",
           "captures": {
             "1": {
               "name": "keyword.control.tpl"
@@ -967,6 +967,23 @@
               "name": "punctuation.accessor.tpl"
             },
             "3": {
+              "name": "variable.parameter.tpl"
+            }
+          }
+        },
+        "table_functions": {
+          "match": "(table\\b)(\\s*\\(|(\\.)(remove))",
+          "captures": {
+            "1": {
+              "name": "keyword.control.tpl"
+            },
+            "2": {
+              "name": "punctuation.accessor.tpl"
+            },
+            "3": {
+              "name": "punctuation.accessor.tpl"
+            },
+            "4": {
               "name": "variable.parameter.tpl"
             }
           }
@@ -1227,13 +1244,13 @@
               "include": "#log_functions"
             },
             {
-              "include": "#log_functions"
-            },
-            {
               "include": "#text_functions"
             },
             {
               "include": "#number_functions"
+            },
+            {
+              "include": "#table_functions"
             },
             {
               "include": "#regex_functions"
