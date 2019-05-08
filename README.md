@@ -2,7 +2,9 @@
 
 The Pattern Language (TPL) syntax highlighting extension for Visual Studio Code. TPL is used to create rules and models which describe applications, products and other real-world entities that have been modeled in BMC Discovery.
 
-This software is based on existing extension for Atom editor: https://github.com/trianglesis/language-tplpre
+This repository was manually copied (instead of being properly forked) from the repo by dudexino. This was an accident and was not an attempt to take credit for his work. The original repo is located here: https://github.com/dudexino/vscode-tpl
+
+The original repo was based on existing extension for Atom editor: https://github.com/trianglesis/language-tplpre
 
 TPL is used in BMC's Discovery application. Full documentation can be found here: https://docs.bmc.com/docs/display/DISCO113
 
