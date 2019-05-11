@@ -984,11 +984,14 @@
             },
             {
               "include": "#regex"
+            },
+            {
+              "include": "#model_attribute_assignment"
             }
           ]
         },
         "model_node_functions": {
-          "comment": "TODO: confirm that Model SI functions DEV is working. TODO: add more node types",
+          "comment": "TODO: confirm that Model SI functions DEV is working. TODO: add more node types. TODO: Finish branch",
           "begin": "(model)(\\.)(BusinessApplicationInstance|Detail|FunctionalComponent|SoftwareInstance)",
           "beginCaptures": {
             "1": {
@@ -1016,8 +1019,30 @@
             },
             {
               "include": "#regex"
+            },
+            {
+              "include": "#model_attribute_assignment"
             }
           ]
+        },
+        "model_attribute_assignment": {
+          "comment": "Covers assignment of values to attributes within 'model' and 'model.rel' functions",
+          "match": "^\\s*(([a-zA-Z]\\w*)\\s*(\\:\\=)\\s*(\\w+))",
+          "name": "keyword.control.conditional.tpl",
+          "captures": {
+            "1": {
+              "name": "punctuation.accessor.tpl"
+            },
+            "2": {
+              "name": "variable.parameter.tpl"
+            },
+            "3": {
+              "name": "keyword.operator.assignment.tpl"
+            },
+            "4": {
+              "name": "entity.name.type.tpl"
+            }
+          }
         },
         "log_functions": {
           "match": "(log)(\\.)(debug|info|warn|error|critical)",
@@ -1505,8 +1530,8 @@
           "name": "keyword.control.conditional.tpl"
         },
         "for_statement": {
-          "comment": "TODO: Improve this with some logic. Now only works when 4 spaces before it.",
-          "begin": "\\s*(for\\b)(?!;)",
+          "comment": "TODO: Confirm logic is accurate",
+          "begin": "^\\s*(for\\b)(?!;)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.tpl"
