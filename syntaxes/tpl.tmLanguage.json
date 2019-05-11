@@ -795,9 +795,9 @@
             }
           ]
         },
-        "discovery_functions": {
+        "discovery_action_functions": {
           "comment": "TODO: confirm that Discovery functions DEV is working",
-          "begin": "(discovery)(\\.)(fileGet|fileInfo|getNames|listDirectory|listRegistry|registryKey|wmiQuery|wbemQuery|wbemEnumInstances|runCommand|snmpGet|snmpGetTable|restfulGet|restfulPost|vSphereFindObjects|vSphereTraverseToObjects|vSphereGetProperties|vSphereGetPropertyTable)",
+          "begin": "(discovery)(\\.)(fileGet|fileInfo|getNames|lookupAddresses|listDirectory|listRegistry|registryKey|wmiQuery|wbemQuery|wbemEnumInstances|runCommand|snmpGet|snmpGetTable|vSphereFindObjects|vSphereTraverseToObjects|vSphereGetProperties|vSphereGetPropertyTable|scan|restfulGet|restfulPost|restfulDelete|restfulPatch|restfulPut)",
           "beginCaptures": {
             "1": {
               "name": "support.function.tpl"
@@ -806,6 +806,96 @@
               "name": "punctuation.accessor.tpl"
             },
             "3": {
+              "name": "variable.parameter.tpl"
+            }
+          },
+          "end": "\\;",
+          "endCaptures": {
+            "1": {
+              "name": "disabled.tpl"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#lines"
+            },
+            {
+              "include": "#all_controls"
+            },
+            {
+              "include": "#regex"
+            }
+          ]
+        },
+        "discovery_cloud_aws_functions": {
+          "begin": "(discovery)(\\.)(AWS)(\\.)(AutoScaling|CF|EC2|ELB|ELBv2|RDS|S3)(\\.)((Describe|Get|List)\\w+\\b)",
+          "beginCaptures": {
+            "1": {
+              "name": "support.function.tpl"
+            },
+            "2": {
+              "name": "punctuation.accessor.tpl"
+            },
+            "3": {
+              "name": "support.function.tpl"
+            },
+            "4": {
+              "name": "punctuation.accessor.tpl"
+            },
+            "5": {
+              "name": "variable.parameter.tpl"
+            },
+            "6": {
+              "name": "punctuation.accessor.tpl"
+            },
+            "7": {
+              "name": "variable.parameter.tpl"
+            }
+          },
+          "end": "\\;",
+          "endCaptures": {
+            "1": {
+              "name": "disabled.tpl"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#lines"
+            },
+            {
+              "include": "#all_controls"
+            },
+            {
+              "include": "#regex"
+            }
+          ]
+        },
+        "discovery_cloud_azure_functions": {
+          "comment": "Due to the number of possible matching groups, the whole match is wrapped for punctuation and each sub-group match is colored.",
+          "begin": "((discovery)\\.(Azure)\\.((Availability|Virtual|LoadBalancers|Network|Public|RouteTables|Providers|ResourceGroups|Subscriptions|Tenants|SQLServers|Storage|AutoScale|AppService)\\w*)\\.(\\w+)?\\.?(\\w+)?\\.?((List|Get)\\w*\\b))",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.accessor.tpl"
+            },
+            "2": {
+              "name": "support.function.tpl"
+            },
+            "3": {
+              "name": "support.function.tpl"
+            },
+            "4": {
+              "name": "variable.parameter.tpl"
+            },
+            "5": {
+              "name": "variable.parameter.tpl"
+            },
+            "6": {
+              "name": "variable.parameter.tpl"
+            },
+            "7": {
+              "name": "variable.parameter.tpl"
+            },
+            "8": {
               "name": "variable.parameter.tpl"
             }
           },
@@ -1129,6 +1219,7 @@
           }
         },
         "DiscoveryFunctions": {
+          "comment": "These functions come from the TKU Module 'Discovery Functions'",
           "match": "(DiscoveryFunctions)(\\.)(pathNormalization|getCleanedupPath|getMaxVersion|getExeCwdPath|sortList|runActiveCommand|locateCommands|checkCommandList)",
           "captures": {
             "1": {
@@ -1229,7 +1320,13 @@
         "all_functions": {
           "patterns": [
             {
-              "include": "#discovery_functions"
+              "include": "#discovery_action_functions"
+            },
+            {
+              "include": "#discovery_cloud_aws_functions"
+            },
+            {
+              "include": "#discovery_cloud_azure_functions"
             },
             {
               "include": "#model_functions"
