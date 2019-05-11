@@ -1190,6 +1190,20 @@
             }
           }
         },
+        "system_functions": {
+          "match": "(system)(\\.)(getOption|cmdbSync)",
+          "captures": {
+            "1": {
+              "name": "keyword.control.tpl"
+            },
+            "2": {
+              "name": "punctuation.accessor.tpl"
+            },
+            "3": {
+              "name": "variable.parameter.tpl"
+            }
+          }
+        },
         "inference_functions": {
           "match": "(inference)(\\.)(associate|contributor|primary|relation|withdrawal|destruction)",
           "captures": {
