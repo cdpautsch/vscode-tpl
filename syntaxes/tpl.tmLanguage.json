@@ -795,6 +795,44 @@
             }
           ]
         },
+        "begin_variable_assignment": {
+          "comment": "Covers beginning assignment of a value to a variable. IN PROGRESS",
+          "match": "^(\\s*(\\w+)\\s*(\\:\\=)\\s*)",
+          "captures": {
+            "1": {
+              "name": "punctuation.accessor.tpl"
+            },
+            "2": {
+              "name": "variable.parameter.tpl"
+            },
+            "3": {
+              "name": "keyword.operator.assignment.tpl"
+            }
+          }
+        },
+        "end_variable_assignment": {
+          "comment": "Covers ending assignment of a value to a variable. IN PROGRESS",
+          "match": ">==\\s*(\\w+)(;|,)$",
+          "name": "punctuation.accessor.tpl",
+          "captures": {
+            "1": {
+              "name": "entity.name.type.tpl"
+            },
+            "2": {
+              "name": "punctuation.accessor.tpl"
+            }
+          }
+        },
+        "temp_test": {
+          "comment": "TEMP TEST PLEASE DELETE",
+          "match": "(?<=abc)WHAT",
+          "name": "variable.parameter.tpl",
+          "captures": {
+            "1": {
+              "name": "entity.name.type.tpl"
+            }
+          }
+        },
         "discovery_action_functions": {
           "comment": "TODO: confirm that Discovery functions DEV is working",
           "begin": "(discovery)(\\.)(fileGet|fileInfo|getNames|lookupAddresses|listDirectory|listRegistry|registryKey|wmiQuery|wbemQuery|wbemEnumInstances|runCommand|snmpGet|snmpGetTable|vSphereFindObjects|vSphereTraverseToObjects|vSphereGetProperties|vSphereGetPropertyTable|scan|restfulGet|restfulPost|restfulDelete|restfulPatch|restfulPut)",
@@ -1659,6 +1697,15 @@
             },
             {
               "include": "#node_relationships"
+            },
+            {
+              "include": "#begin_variable_assignment"
+            },
+            {
+              "include": "#end_variable_assignment"
+            },
+            {
+              "include": "#temp_test"
             }
           ]
         },
