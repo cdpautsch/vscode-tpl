@@ -812,7 +812,7 @@
         },
         "end_variable_assignment": {
           "comment": "Covers ending assignment of a value to a variable. IN PROGRESS",
-          "match": ">==\\s*(\\w+)(;|,)$",
+          "match": "(?<=:=)\\s*(\\w+)(;|,)$",
           "name": "punctuation.accessor.tpl",
           "captures": {
             "1": {
