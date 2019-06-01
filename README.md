@@ -1,3 +1,18 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [VSCODE-TPL README](#vscode-tpl-readme)
+  - [Why Visual Studio Code?](#why-visual-studio-code)
+  - [Releases](#releases)
+    - [v1.0.0](#v100)
+  - [Installation](#installation)
+  - [Want to Contribute?](#want-to-contribute)
+  - [Future Plans](#future-plans)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+
 # VSCODE-TPL README
 
 The Pattern Language (TPL) syntax highlighting extension for Visual Studio Code. TPL is used to create rules and models which describe applications, products and other real-world entities that have been modeled in BMC Discovery.
@@ -16,6 +31,10 @@ This extension is not endorsed or sponsored by BMC in any way. The intent is to 
 Visual Studio Code is a much more powerful tool than simple text editors. It is customizable and lightweight, making it ideal for a lesser known language such as TPL. You can open up a directory of TPL patterns, giving you the option to search them all inside the editor, make global changes, and organize projects with greater efficiency. It runs on Windows, Mac, and Linux.
 
 Download VS Code here: https://code.visualstudio.com/
+
+## Releases
+### v1.0.0
+Released 6/1/19. Can be installed via the VSCode marketplace, or downloaded from the release list on Github.
 
 ## Installation
 * Clone the Git repo to your computer:
