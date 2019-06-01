@@ -15,7 +15,7 @@
 
 <p align="center">
   <br />
-  <a title="Learn more about VSCode TPL" href="https://github.com/cdpautsch/vscode-tpl"><img src="https://raw.githubusercontent.com/cdpautsch/vscode-tpl/master/images/icon.png" alt="VSCode TPL Logo" width="70%" /></a>
+  <a title="Learn more about VSCode TPL" href="https://github.com/cdpautsch/vscode-tpl"><img src="https://raw.githubusercontent.com/cdpautsch/vscode-tpl/master/images/readme-icon.png" alt="VSCode TPL Logo" /></a>
 </p>
 
 # VSCODE-TPL README
