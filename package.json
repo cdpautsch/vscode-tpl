@@ -4,6 +4,13 @@
     "description": "The Pattern Language, TPL, files syntax highlighting extension for Visual Studio Code. TPL is used to describe applications, products and other real-world entities that have been modeled in BMC Discovery.",
     "version": "1.0.0",
     "publisher": "cdpautsch",
+    "author": "cdpautsch",
+    "keywords": [
+        "BMC",
+        "BMC Discovery",
+        "Discovery",
+        "TPL"
+    ],
     "repository": {
         "type": "git",
         "url": "https://github.com/cdpautsch/vscode-tpl"

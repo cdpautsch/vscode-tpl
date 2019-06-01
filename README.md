@@ -42,10 +42,20 @@ Download VS Code here: https://code.visualstudio.com/
 Released 6/1/19. Can be installed via the VSCode marketplace, or downloaded from the release list on Github.
 
 ## Installation
-* Clone the Git repo to your computer:
-    * Using SSH: `git clone git@github.com:cdpautsch/vscode-tpl.git`. _Note: This method requires you to setup an [SSH key](https://help.github.com/en/articles/connecting-to-github-with-ssh)_.
-    * Using HTTPS: `git clone https://github.com/cdpautsch/vscode-tpl.git`
-* Download and copy the extension (the entire folder) into the `<user home>/.vscode/extensions` folder and restart Visual Studio Code.
+* Option 1: Clone the Git repo to your computer (generally only for development):
+  * Using SSH: `git clone git@github.com:cdpautsch/vscode-tpl.git`. _Note: This method requires you to setup an [SSH key](https://help.github.com/en/articles/connecting-to-github-with-ssh)_.
+  * Using HTTPS: `git clone https://github.com/cdpautsch/vscode-tpl.git`
+  * _For the rest of the steps, see 'Option 3' below._
+* Option 2: Download from the VSCode Marketplace
+  * Simply search for "The Pattern Language TPL" and it should come up.
+  * Install in VSCode from within the app
+* Option 3: Download a release from this Github
+  * We have releases in `.zip`, `.tar.gz`, and `vsix` options. Download one of these.
+  * (unless you have the `vsix` version) Copy the extension (the entire folder) into the extensions folder and restart Visual Studio Code. This folder is located in the following locations:
+    * __Windows__: `%USERPROFILE%\.vscode\extensions`
+    * __macOS__: `~/.vscode/extensions`
+    * __Linux__: `~/.vscode/extensions`
+  * (if you download the `vsix` version) Install using the command line: `code --install-extension my-extension-0.0.1.vsix`
 
 _Note: Once the language is more polished, we will eventually publish it to the VSCode extension marketplace, allowing you to enable the extension entirely from within VSCode._
 
