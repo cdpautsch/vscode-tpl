@@ -11,7 +11,12 @@
   - [Future Plans](#future-plans)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+<!-- Usage: use `doctoc README.md` and `doctoc CHANGELOG.md`, do NOT use `doctoc .` -->
 
+<p align="center">
+  <br />
+  <a title="Learn more about VSCode TPL" href="https://github.com/cdpautsch/vscode-tpl"><img src="https://raw.githubusercontent.com/cdpautsch/vscode-tpl/master/images/icon.png" alt="VSCode TPL Logo" width="70%" /></a>
+</p>
 
 # VSCODE-TPL README
 
