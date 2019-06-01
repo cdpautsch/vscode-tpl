@@ -797,10 +797,10 @@
         },
         "begin_variable_assignment": {
           "comment": "Covers beginning assignment of a value to a variable. IN PROGRESS",
-          "match": "^(\\s*(\\w+)\\s*(\\:\\=)\\s*)",
+          "match": "^\\s*(\\w+)\\s*(\\:\\=)",
           "captures": {
             "1": {
-              "name": "punctuation.accessor.tpl"
+              "name": "variable.parameter.tpl"
             },
             "2": {
               "name": "variable.parameter.tpl"
