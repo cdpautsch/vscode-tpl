@@ -795,6 +795,44 @@
             }
           ]
         },
+        "begin_variable_assignment": {
+          "comment": "Covers beginning assignment of a value to a variable. IN PROGRESS",
+          "match": "^\\s*(\\w+)\\s*(\\:\\=)",
+          "captures": {
+            "1": {
+              "name": "variable.parameter.tpl"
+            },
+            "2": {
+              "name": "variable.parameter.tpl"
+            },
+            "3": {
+              "name": "keyword.operator.assignment.tpl"
+            }
+          }
+        },
+        "end_variable_assignment": {
+          "comment": "Covers ending assignment of a value to a variable. IN PROGRESS",
+          "match": "(?<=:=)\\s*(\\w+)(;|,)$",
+          "name": "punctuation.accessor.tpl",
+          "captures": {
+            "1": {
+              "name": "entity.name.type.tpl"
+            },
+            "2": {
+              "name": "punctuation.accessor.tpl"
+            }
+          }
+        },
+        "temp_test": {
+          "comment": "TEMP TEST PLEASE DELETE",
+          "match": "(?<=abc)WHAT",
+          "name": "variable.parameter.tpl",
+          "captures": {
+            "1": {
+              "name": "entity.name.type.tpl"
+            }
+          }
+        },
         "discovery_action_functions": {
           "comment": "TODO: confirm that Discovery functions DEV is working",
           "begin": "(discovery)(\\.)(fileGet|fileInfo|getNames|lookupAddresses|listDirectory|listRegistry|registryKey|wmiQuery|wbemQuery|wbemEnumInstances|runCommand|snmpGet|snmpGetTable|vSphereFindObjects|vSphereTraverseToObjects|vSphereGetProperties|vSphereGetPropertyTable|scan|restfulGet|restfulPost|restfulDelete|restfulPatch|restfulPut)",
@@ -984,11 +1022,14 @@
             },
             {
               "include": "#regex"
+            },
+            {
+              "include": "#model_attribute_assignment"
             }
           ]
         },
         "model_node_functions": {
-          "comment": "TODO: confirm that Model SI functions DEV is working. TODO: add more node types",
+          "comment": "TODO: confirm that Model SI functions DEV is working. TODO: add more node types. TODO: Finish branch",
           "begin": "(model)(\\.)(BusinessApplicationInstance|Detail|FunctionalComponent|SoftwareInstance)",
           "beginCaptures": {
             "1": {
@@ -1016,8 +1057,30 @@
             },
             {
               "include": "#regex"
+            },
+            {
+              "include": "#model_attribute_assignment"
             }
           ]
+        },
+        "model_attribute_assignment": {
+          "comment": "Covers assignment of values to attributes within 'model' and 'model.rel' functions",
+          "match": "^\\s*(([a-zA-Z]\\w*)\\s*(\\:\\=)\\s*(\\w+))",
+          "name": "keyword.control.conditional.tpl",
+          "captures": {
+            "1": {
+              "name": "punctuation.accessor.tpl"
+            },
+            "2": {
+              "name": "variable.parameter.tpl"
+            },
+            "3": {
+              "name": "keyword.operator.assignment.tpl"
+            },
+            "4": {
+              "name": "entity.name.type.tpl"
+            }
+          }
         },
         "log_functions": {
           "match": "(log)(\\.)(debug|info|warn|error|critical)",
@@ -1391,6 +1454,9 @@
               "include": "#inference_functions"
             },
             {
+              "include": "#system_functions"
+            },
+            {
               "include": "#ConversionFunctions"
             },
             {
@@ -1502,8 +1568,8 @@
           "name": "keyword.control.conditional.tpl"
         },
         "for_statement": {
-          "comment": "TODO: Improve this with some logic. Now only works when 4 spaces before it.",
-          "begin": "\\s*(for\\b)(?!;)",
+          "comment": "TODO: Confirm logic is accurate",
+          "begin": "^\\s*(for\\b)(?!;)",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.tpl"
@@ -1631,6 +1697,15 @@
             },
             {
               "include": "#node_relationships"
+            },
+            {
+              "include": "#begin_variable_assignment"
+            },
+            {
+              "include": "#end_variable_assignment"
+            },
+            {
+              "include": "#temp_test"
             }
           ]
         },
