@@ -1527,6 +1527,12 @@
             },
             {
               "include": "#lines"
+            },
+            {
+              "include": "#keywords_attrs"
+            },
+            {
+              "include": "#all_functions"
             }
           ]
         },
@@ -1556,6 +1562,12 @@
             },
             {
               "include": "#lines"
+            },
+            {
+              "include": "#keywords_attrs"
+            },
+            {
+              "include": "#all_functions"
             }
           ]
         },
