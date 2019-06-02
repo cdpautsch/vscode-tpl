@@ -57,8 +57,6 @@ Released 6/1/19. Can be installed via the VSCode marketplace, or downloaded from
     * __Linux__: `~/.vscode/extensions`
   * (if you download the `vsix` version) Install using the command line: `code --install-extension my-extension-0.0.1.vsix`
 
-_Note: Once the language is more polished, we will eventually publish it to the VSCode extension marketplace, allowing you to enable the extension entirely from within VSCode._
-
 ## Want to Contribute?
 This repository is open to contributions from others. Please follow contribution guidelines:
 * For bugs or other problems, please create an issue using the bug template.
@@ -66,7 +64,6 @@ This repository is open to contributions from others. Please follow contribution
 * New features and fixes should be made in a new branch, split off from master, then merged with a pull request that requires approvals of at least 2 others (or admin approval).
 
 ## Future Plans
-* Publish the extension to VSCode marketplace once the extension has matured and been refined.
 * Develop a custom theme which provides custom theming for TPL colors
 * Develop a system for linting TPL code
 * Develop a system for error-checking
