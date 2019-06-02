@@ -26,6 +26,7 @@
 - All issues for the  v1 milestone have been completed. The highlighting works reasonably well and there are no catastrophic issues.
 - Updated the README.
 - Created release v1.0.0.
+- Published to VSCode Marketplace.
 
 ## 0.0.5 - 2019-06-01
 ### Updated
