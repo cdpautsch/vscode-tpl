@@ -2,7 +2,7 @@
     "name": "tpl",
     "displayName": "The Pattern Language (TPL)",
     "description": "The Pattern Language, TPL, files syntax highlighting extension for Visual Studio Code. TPL is used to describe applications, products and other real-world entities that have been modeled in BMC Discovery.",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "publisher": "cdpautsch",
     "author": "cdpautsch",
     "keywords": [
@@ -26,16 +26,25 @@
         "Programming Languages"
     ],
     "contributes": {
-        "languages": [{
-            "id": "tpl",
-            "aliases": ["TPL", "tpl"],
-            "extensions": [".tpl"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "tpl",
-            "scopeName": "source.tpl",
-            "path": "./syntaxes/tpl.tmLanguage.json"
-        }]
+        "languages": [
+            {
+                "id": "tpl",
+                "aliases": [
+                    "TPL",
+                    "tpl"
+                ],
+                "extensions": [
+                    ".tpl"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "tpl",
+                "scopeName": "source.tpl",
+                "path": "./syntaxes/tpl.tmLanguage.json"
+            }
+        ]
     }
 }
