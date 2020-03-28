@@ -167,7 +167,7 @@
           ]
         },
         {
-          "begin": "^\\b(pattern)\\s+(\\w+)\\s(\\d+(?:\\.\\d+)+)\\s+$",
+          "begin": "^\\b(pattern|syncmapping)\\s+(\\w+)\\s(\\d+(?:\\.\\d+)+)\\s+$",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.tpl"
@@ -179,7 +179,7 @@
               "name": "constant.numeric.tpl"
             }
           },
-          "end": "\\b(end\\spattern;)",
+          "end": "\\b(end\\spattern|syncmapping;)",
           "endCaptures": {
             "1": {
               "name": "keyword.control.tpl"
