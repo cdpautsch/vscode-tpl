@@ -167,7 +167,7 @@
           ]
         },
         {
-          "begin": "^\\b(pattern)\\s+(\\w+)\\s(\\d+(?:\\.\\d+)+)\\s+$",
+          "begin": "^\\b(pattern|syncmapping)\\s+(\\w+)\\s(\\d+(?:\\.\\d+)+)\\s+$",
           "beginCaptures": {
             "1": {
               "name": "keyword.control.tpl"
@@ -179,7 +179,7 @@
               "name": "constant.numeric.tpl"
             }
           },
-          "end": "\\b(end\\spattern;)",
+          "end": "\\b(end\\spattern|syncmapping;)",
           "endCaptures": {
             "1": {
               "name": "keyword.control.tpl"
@@ -203,6 +203,9 @@
             },
             {
               "include": "#constants"
+            },
+            {
+              "include": "#mapping"
             },
             {
               "include": "#triggers"
@@ -322,6 +325,31 @@
             }
           },
           "end": "\\b(end\\sconstants;)\\s+?$",
+          "endCaptures": {
+            "1": {
+              "name": "keyword.control.tpl"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#lines"
+            },
+            {
+              "include": "#all_functions"
+            },
+            {
+              "include": "#if_addm"
+            }
+          ]
+        },
+        "mapping": {
+          "begin": "\\b(mapping)\\s+?$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.tpl"
+            }
+          },
+          "end": "\\b(end\\mapping;)\\s+?$",
           "endCaptures": {
             "1": {
               "name": "keyword.control.tpl"
@@ -1082,6 +1110,88 @@
             }
           }
         },
+        "sync_rel_functions": {
+          "comment": "confirm all possible namespace functions and arguments",
+          "begin": "(sync)(\\.)(rel)(\\.)(BMC_Component)",
+          "beginCaptures": {
+            "1": {
+              "name": "entity.name.function.tpl"
+            },
+            "2": {
+              "name": "punctuation.accessor.tpl"
+            },
+            "3": {
+              "name": "support.function.tpl"
+            },
+            "4": {
+              "name": "punctuation.accessor.tpl"
+            },
+            "5": {
+              "name": "constant.character.escape.tpl"
+            }
+          },
+          "end": "\\;",
+          "endCaptures": {
+            "1": {
+              "name": "disabled.tpl"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#lines"
+            },
+            {
+              "include": "#all_controls"
+            },
+            {
+              "include": "#regex"
+            },
+            {
+              "include": "#model_attribute_assignment"
+            }
+          ]
+        },
+        "sync_shared_functions": {
+          "comment": "confirm all possible namespace functions and arguments",
+          "begin": "(sync)(\\.)(shared)(\\.)(BMC_BusinessService)",
+          "beginCaptures": {
+            "1": {
+              "name": "entity.name.function.tpl"
+            },
+            "2": {
+              "name": "punctuation.accessor.tpl"
+            },
+            "3": {
+              "name": "support.function.tpl"
+            },
+            "4": {
+              "name": "punctuation.accessor.tpl"
+            },
+            "5": {
+              "name": "constant.character.escape.tpl"
+            }
+          },
+          "end": "\\;",
+          "endCaptures": {
+            "1": {
+              "name": "disabled.tpl"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#lines"
+            },
+            {
+              "include": "#all_controls"
+            },
+            {
+              "include": "#regex"
+            },
+            {
+              "include": "#model_attribute_assignment"
+            }
+          ]
+        },
         "log_functions": {
           "match": "(log)(\\.)(debug|info|warn|error|critical)",
           "captures": {
@@ -1413,6 +1523,12 @@
             },
             {
               "include": "#model_rel_functions"
+            },
+            {
+              "include": "#sync_rel_functions"
+            },
+            {
+              "include": "#sync_shared_functions"
             },
             {
               "include": "#log_functions"
