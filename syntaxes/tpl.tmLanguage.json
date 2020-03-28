@@ -205,6 +205,9 @@
               "include": "#constants"
             },
             {
+              "include": "#mapping"
+            },
+            {
               "include": "#triggers"
             },
             {
@@ -1520,6 +1523,12 @@
             },
             {
               "include": "#model_rel_functions"
+            },
+            {
+              "include": "#sync_rel_functions"
+            },
+            {
+              "include": "#sync_shared_functions"
             },
             {
               "include": "#log_functions"
