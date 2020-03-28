@@ -339,6 +339,31 @@
             }
           ]
         },
+        "mapping": {
+          "begin": "\\b(mapping)\\s+?$",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control.tpl"
+            }
+          },
+          "end": "\\b(end\\mapping;)\\s+?$",
+          "endCaptures": {
+            "1": {
+              "name": "keyword.control.tpl"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#lines"
+            },
+            {
+              "include": "#all_functions"
+            },
+            {
+              "include": "#if_addm"
+            }
+          ]
+        },
         "triggers": {
           "begin": "^\\s*(triggers)\\s+?$",
           "beginCaptures": {
@@ -1081,6 +1106,88 @@
               "name": "entity.name.type.tpl"
             }
           }
+        },
+        "sync_rel_functions": {
+          "comment": "confirm all possible namespace functions and arguments",
+          "begin": "(sync)(\\.)(rel)(\\.)(BMC_Component)",
+          "beginCaptures": {
+            "1": {
+              "name": "entity.name.function.tpl"
+            },
+            "2": {
+              "name": "punctuation.accessor.tpl"
+            },
+            "3": {
+              "name": "support.function.tpl"
+            },
+            "4": {
+              "name": "punctuation.accessor.tpl"
+            },
+            "5": {
+              "name": "constant.character.escape.tpl"
+            }
+          },
+          "end": "\\;",
+          "endCaptures": {
+            "1": {
+              "name": "disabled.tpl"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#lines"
+            },
+            {
+              "include": "#all_controls"
+            },
+            {
+              "include": "#regex"
+            },
+            {
+              "include": "#model_attribute_assignment"
+            }
+          ]
+        },
+        "sync_shared_functions": {
+          "comment": "confirm all possible namespace functions and arguments",
+          "begin": "(sync)(\\.)(shared)(\\.)(BMC_BusinessService)",
+          "beginCaptures": {
+            "1": {
+              "name": "entity.name.function.tpl"
+            },
+            "2": {
+              "name": "punctuation.accessor.tpl"
+            },
+            "3": {
+              "name": "support.function.tpl"
+            },
+            "4": {
+              "name": "punctuation.accessor.tpl"
+            },
+            "5": {
+              "name": "constant.character.escape.tpl"
+            }
+          },
+          "end": "\\;",
+          "endCaptures": {
+            "1": {
+              "name": "disabled.tpl"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#lines"
+            },
+            {
+              "include": "#all_controls"
+            },
+            {
+              "include": "#regex"
+            },
+            {
+              "include": "#model_attribute_assignment"
+            }
+          ]
         },
         "log_functions": {
           "match": "(log)(\\.)(debug|info|warn|error|critical)",
